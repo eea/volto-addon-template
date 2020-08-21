@@ -41,14 +41,14 @@ Demo GIF
 
 ## How to contribute
 
-See [DEVELOP.md](docs/DEVELOP.md).
+See [DEVELOP.md](DEVELOP.md).
 
 ## Copyright and license
 
 The Initial Owner of the Original Code is European Environment Agency (EEA).
 All Rights Reserved.
 
-See [LICENSE.md](docs/LICENSE.md) for details.
+See [LICENSE.md](LICENSE.md) for details.
 
 ## Funding
 
