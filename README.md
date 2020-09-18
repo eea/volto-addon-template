@@ -25,7 +25,7 @@ Demo GIF
     ],
 
     "dependencies": {
-        "@eeacms/volto-addon-template": "github:eea/volto-addon-template#0.1.0"
+        "@eeacms/volto-addon-template": "1.0.0"
     }
     ```
 
@@ -41,14 +41,14 @@ Demo GIF
 
 ## How to contribute
 
-See [DEVELOP.md](DEVELOP.md).
+See [DEVELOP.md](https://github.com/eea/volto-addon-template/blob/master/DEVELOP.md2).
 
 ## Copyright and license
 
 The Initial Owner of the Original Code is European Environment Agency (EEA).
 All Rights Reserved.
 
-See [LICENSE.md](LICENSE.md) for details.
+See [LICENSE.md](https://github.com/eea/volto-addon-template/blob/master/LICENSE.md) for details.
 
 ## Funding
 

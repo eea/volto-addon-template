@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "description": "volto-addon-template: Volto add-on",
   "main": "src/index.js",
-  "repository": "https://github.com/eea/volto-addon-template",
   "author": "European Environment Agency: IDM2 A-Team",
   "license": "MIT",
+  "homepage": "https://github.com/eea/volto-addon-template",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:eea/volto-addon-template.git"
+  },
   "devDependencies": {
     "release-it": "*"
   },
