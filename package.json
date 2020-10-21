@@ -21,6 +21,6 @@
   },
   "scripts": {
     "release": "release-it",
-    "bootstrap": "./bootstrap"
+    "bootstrap": "node bootstrap"
   }
 }

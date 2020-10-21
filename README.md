@@ -13,12 +13,12 @@ Demo GIF
 
 1. Create new volto project if you don't already have one:
     ```
-    $ npm install -g @plone/create-volto-app
-    $ create-volto-app my-volto-project
+    $ npm install -g yo @plone/generator-volto
+    $ yo @plone/volto my-volto-project --addon @eeacms/volto-addon-template
     $ cd my-volto-project
     ```
 
-1. Update `package.json`:
+1. If you already have a volto project, just update `package.json`:
     ``` JSON
     "addons": [
         "@eeacms/volto-addon-template"
