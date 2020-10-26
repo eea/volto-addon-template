@@ -41,7 +41,7 @@ Demo GIF
 
 ## How to contribute
 
-See [DEVELOP.md](https://github.com/eea/volto-addon-template/blob/master/DEVELOP.md2).
+See [DEVELOP.md](https://github.com/eea/volto-addon-template/blob/master/DEVELOP.md).
 
 ## Copyright and license
 
