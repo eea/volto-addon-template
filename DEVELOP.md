@@ -4,11 +4,11 @@
 
 Before starting make sure your development environment is properly set. See [Volto Developer Documentation](https://docs.voltocms.com/getting-started/install/)
 
-1. Make sure you have installed `yo`, `@plone/generator-volto` and `mrs.developer`
+1. Make sure you have installed `yo`, `@plone/generator-volto` and `mrs-developer`
 
         $ npm install -g yo
         $ npm install -g @plone/generator-volto
-        $ npm install -g mrs.developer
+        $ npm install -g mrs-developer
 
 1. Create new volto app
 
