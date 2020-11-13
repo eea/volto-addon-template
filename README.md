@@ -18,7 +18,9 @@ Demo GIF
    ```
    $ npm install -g yo @plone/generator-volto
    $ yo @plone/volto my-volto-project --addon @eeacms/volto-addon-template
+
    $ cd my-volto-project
+   $ yarn add -W @eeacms/volto-addon-template
    ```
 
 1. If you already have a volto project, just update `package.json`:
