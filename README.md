@@ -31,7 +31,7 @@ Demo GIF
    ],
 
    "dependencies": {
-       "@eeacms/volto-addon-template": "1.0.0"
+       "@eeacms/volto-addon-template": "^1.0.0"
    }
    ```
 
