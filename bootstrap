@@ -11,7 +11,6 @@ const bootstrap = function (ofile) {
         }
         const result = ejs.render(data, {
             addonName: `@eeacms/${currentDir}`,
-            scope: '@eeacms',
             name: currentDir
         });
         const output = ofile.replace('.tpl', '');
@@ -20,8 +19,12 @@ const bootstrap = function (ofile) {
                 return console.log(err);
             }
         });
-        if(ofile.indexOf('.tpl') !== -1) {
-            fs.delete(ofile);
+        if (ofile.includes('.tpl')) {
+            fs.unlink(ofile, (err) => {
+                if (err) {
+                    return console.error(err);
+                }
+            });
         }
     });
 }

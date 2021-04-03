@@ -1,7 +1,7 @@
 {
   "name": "@eeacms/volto-addon-template",
   "version": "0.1.0",
-  "description": "volto-addon-template: Volto add-on",
+  "description": "@eeacms/volto-addon-template: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
   "license": "MIT",
