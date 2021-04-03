@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const ejs = require('ejs');
 
 const currentDir = path.basename(process.cwd());
 
@@ -8,13 +9,20 @@ const bootstrap = function (ofile) {
         if (err) {
             return console.log(err);
         }
-        var result = data.replace(/volto-addon-template/g, currentDir);
-
-        fs.writeFile(ofile, result, 'utf8', function (err) {
+        const result = ejs.render(data, {
+            addonName: `@eeacms/${currentDir}`,
+            scope: '@eeacms',
+            name: currentDir
+        });
+        const output = ofile.replace('.tpl', '');
+        fs.writeFile(output, result, 'utf8', function (err) {
             if (err) {
                 return console.log(err);
             }
         });
+        if(ofile.indexOf('.tpl') !== -1) {
+            fs.delete(ofile);
+        }
     });
 }
 
