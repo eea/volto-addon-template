@@ -7,9 +7,9 @@
 
 ## Features
 
-###
-
 Demo GIF
+
+## Getting started
 
 ### Try <%= name %> with Docker
 

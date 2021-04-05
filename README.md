@@ -7,9 +7,9 @@
 
 ## Features
 
-###
-
 Demo GIF
+
+## Getting started
 
 ### Try volto-addon-template with Docker
 
