@@ -17,7 +17,6 @@
     "url": "git@github.com:eea/<%= name %>.git"
   },
   "dependencies": {
-  "@cypress/code-coverage": "3.9.5"
   },
   "scripts": {
     "release": "release-it",
