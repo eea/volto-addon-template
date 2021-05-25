@@ -17,6 +17,8 @@
     "url": "git@github.com:eea/<%= name %>.git"
   },
   "dependencies": {
+  },
+  "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
     "babel-plugin-transform-class-properties": "^6.24.1"
   },
