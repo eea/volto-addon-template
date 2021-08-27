@@ -37,13 +37,14 @@ start-backend-docker:		## Starts a Docker-based backend
 .PHONY: test
 test:
 	docker pull plone/volto-addon-ci
-	docker run -it --rm -e NAMESPACE="@eeacms" -e GIT_NAME=volto-addon-template -e RAZZLE_JEST_CONFIG=jest-addon.config.js -v "$$(pwd):/opt/frontend/my-volto-project/src/addons/volto-addon-template" plone/volto-addon-ci yarn test --watchAll=false
+	docker run -it --rm -e NAMESPACE="@eeacms" -e GIT_NAME="${DIR}" -e RAZZLE_JEST_CONFIG=jest-addon.config.js -v "$$(pwd):/opt/frontend/my-volto-project/src/addons/${DIR}" plone/volto-addon-ci yarn test --watchAll=false
 
 .PHONY: test-update
 test-update:
 	docker pull plone/volto-addon-ci
-	docker run -it --rm -e NAMESPACE="@eeacms" -e GIT_NAME=volto-addon-template -e RAZZLE_JEST_CONFIG=jest-addon.config.js -v "$$(pwd):/opt/frontend/my-volto-project/src/addons/volto-addon-template" plone/volto-addon-ci yarn test --watchAll=false -u
+	docker run -it --rm -e NAMESPACE="@eeacms" -e GIT_NAME="${DIR}" -e RAZZLE_JEST_CONFIG=jest-addon.config.js -v "$$(pwd):/opt/frontend/my-volto-project/src/addons/${DIR}" plone/volto-addon-ci yarn test --watchAll=false -u
 
 .PHONY: help
 help:		## Show this help.
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
+.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
