@@ -11,6 +11,13 @@ pipeline {
   stages {
 
     stage('Code') {
+      when {
+        allOf {
+          environment name: 'CHANGE_ID', value: ''
+          not { branch 'master' }
+          not { changelog '.*^Automated release [0-9\\.]+$' }
+        }
+      }
       steps {
         parallel(
 
@@ -36,6 +43,13 @@ pipeline {
     }
 
     stage('Tests') {
+      when {
+        allOf {
+          environment name: 'CHANGE_ID', value: ''
+          not { branch 'master' }
+          not { changelog '.*^Automated release [0-9\\.]+$' }
+        }
+      }
       steps {
         parallel(
 
@@ -75,6 +89,13 @@ pipeline {
     }
 
     stage('Integration tests') {
+      when {
+        allOf {
+          environment name: 'CHANGE_ID', value: ''
+          not { branch 'master' }
+          not { changelog '.*^Automated release [0-9\\.]+$' }
+        }
+      }
       steps {
         parallel(
 
@@ -83,7 +104,7 @@ pipeline {
               script {
                 try {
                   sh '''docker pull plone; docker run -d --name="$BUILD_TAG-plone" -e SITE="Plone" -e PROFILES="profile-plone.restapi:blocks" plone fg'''
-                  sh '''docker pull plone/volto-addon-ci; docker run -i --name="$BUILD_TAG-cypress" --link $BUILD_TAG-plone:plone -e NAMESPACE="$NAMESPACE" -e GIT_NAME=$GIT_NAME -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" -e DEPENDENCIES="$DEPENDENCIES" plone/volto-addon-ci cypress'''
+                  sh '''docker pull plone/volto-addon-ci; docker run -i --name="$BUILD_TAG-cypress" --link $BUILD_TAG-plone:plone -e NAMESPACE="$NAMESPACE" -e GIT_NAME=$GIT_NAME -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" -e DEPENDENCIES="$DEPENDENCIES" -e NODE_ENV=development plone/volto-addon-ci cypress'''
                 } finally {
                   try {
                     sh '''rm -rf cypress-reports cypress-results cypress-coverage'''
@@ -122,11 +143,13 @@ pipeline {
     }
 
     stage('Report to SonarQube') {
-      // Exclude Pull-Requests
       when {
-        allOf {
           environment name: 'CHANGE_ID', value: ''
-        }
+          anyOf {
+            branch 'master'
+            branch 'develop'
+          }
+          not { changelog '.*^Automated release [0-9\\.]+$' }
       }
       steps {
         node(label: 'swarm') {
@@ -156,8 +179,8 @@ pipeline {
       steps {
         node(label: 'docker') {
           script {
-            if ( env.CHANGE_BRANCH != "develop" &&  !( env.CHANGE_BRANCH.startsWith("hotfix")) ) {
-                error "Pipeline aborted due to PR not made from develop or hotfix branch"
+            if ( env.CHANGE_BRANCH != "develop" ) {
+                error "Pipeline aborted due to PR not made from develop branch"
             }
            withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN')]) {
             sh '''docker pull eeacms/gitflow'''
