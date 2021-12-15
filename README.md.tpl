@@ -1,7 +1,17 @@
 # <%= name %>
 [![Releases](https://img.shields.io/github/v/release/eea/<%= name %>)](https://github.com/eea/<%= name %>/releases)
+
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2F<%= name %>%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/<%= name %>/job/master/display/redirect)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-master&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-master)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-master&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-master)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-master&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-master)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-master&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-master)
+
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2F<%= name %>%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/<%= name %>/job/develop/display/redirect)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-develop)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-develop)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-develop)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-develop)
 
 [Volto](https://github.com/plone/volto) add-on
 
