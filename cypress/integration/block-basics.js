@@ -6,15 +6,13 @@ describe('Blocks Tests', () => {
 
   it('Add Block: Empty', () => {
     // Change page title
-    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block')
-      .clear()
-      .type('My Add-on Page')
-      .get('.documentFirstHeading span[data-text]')
-      .contains('My Add-on Page');
+    cy.get('[contenteditable=true]').first().clear();
 
-    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block').type(
-      '{enter}',
-    );
+    cy.get('[contenteditable=true]').first().type('My Add-on Page');
+
+    cy.get('.documentFirstHeading').contains('My Add-on Page');
+
+    cy.get('[contenteditable=true]').first().type('{enter}');
 
     // Add block
     cy.get('.ui.basic.icon.button.block-add-button').first().click();
