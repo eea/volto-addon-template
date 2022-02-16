@@ -84,11 +84,11 @@ Demo GIF
 
 ## Release
 
-See [RELEASE.md](RELEASE.md).
+See [RELEASE.md](https://github.com/eea/<%= name %>/blob/master/RELEASE.md).
 
 ## How to contribute
 
-See [DEVELOP.md](DEVELOP.md).
+See [DEVELOP.md](https://github.com/eea/<%= name %>/blob/master/DEVELOP.md).
 
 ## Copyright and license
 
