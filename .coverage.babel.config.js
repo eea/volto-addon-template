@@ -7,3 +7,4 @@ function applyDefault(api) {
 }
 
 module.exports = applyDefault;
+

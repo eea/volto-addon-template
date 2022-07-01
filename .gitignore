@@ -16,7 +16,6 @@ build
 dist
 cypress/videos
 cypress/reports
-cypress/screenshots
 screenshots
 videos
 .env.local
@@ -24,3 +23,19 @@ videos
 .env.test.local
 .env.production.local
 *~
+.yalc
+api/bin
+api/develop-eggs
+api/eggs
+api/include
+api/lib
+api/lib64
+api/parts
+api/var
+api/src
+api/.installed.cfg
+api/.mr.developer.cfg
+api/pyvenv.cfg
+project
+yarn.lock
+yalc.lock
