@@ -16,12 +16,13 @@
     "type": "git",
     "url": "git@github.com:eea/<%= name %>.git"
   },
-  "dependencies": {
-    "@plone/scripts": "*"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@cypress/code-coverage": "^3.9.5",
-    "babel-plugin-transform-class-properties": "^6.24.1"
+    "@plone/scripts": "*",
+    "jest-css-modules": "^2.1.0",
+    "@cypress/code-coverage": "^3.10.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "md5": "^2.3.0"
   },
   "scripts": {
     "release": "release-it",
