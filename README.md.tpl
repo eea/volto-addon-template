@@ -23,28 +23,6 @@ Demo GIF
 
 ## Getting started
 
-### Try <%= name %> with Docker
-
-1. Get the latest Docker images
-
-   ```
-   docker pull plone
-   docker pull plone/volto
-   ```
-
-1. Start Plone backend
-   ```
-   docker run -d --name plone -p 8080:8080 -e SITE=Plone -e PROFILES="profile-plone.restapi:blocks" plone
-   ```
-
-1. Start Volto frontend
-
-   ```
-   docker run -it --rm -p 3000:3000 --link plone -e ADDONS="<%= addonName %>" plone/volto
-   ```
-
-1. Go to http://localhost:3000
-
 ### Add <%= name %> to your Volto project
 
 1. Make sure you have a [Plone backend](https://plone.org/download) up-and-running at http://localhost:8080/Plone
@@ -59,7 +37,7 @@ Demo GIF
    ],
 
    "dependencies": {
-       "<%= addonName %>": "^1.0.0"
+       "<%= addonName %>": "*"
    }
    ```
 
@@ -67,7 +45,7 @@ Demo GIF
 
    ```
    npm install -g yo @plone/generator-volto
-   yo @plone/volto my-volto-project --addon <%= addonName %>
+   yo @plone/volto my-volto-project --canary --addon <%= addonName %>
    cd my-volto-project
    ```
 
