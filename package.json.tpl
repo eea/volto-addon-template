@@ -19,7 +19,6 @@
   "dependencies": {},
   "devDependencies": {
     "@plone/scripts": "*",
-    "jest-css-modules": "^2.1.0",
     "@cypress/code-coverage": "^3.10.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "md5": "^2.3.0"
