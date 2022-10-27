@@ -378,18 +378,18 @@ Cypress.Commands.add(
   }
 );
 
-Cypress.Commands.add('getSlate', (createNewSlate = false) => {
+Cypress.Commands.add('getSlate', ({ createNewSlate = true } = {}) => {
   let slate;
-  if (createNewSlate) {
-    cy.get('.block.inner').last().type('{moveToEnd}{enter}');
-  }
   cy.getIfExists(
     SLATE_SELECTOR,
     () => {
       slate = cy.get(SLATE_SELECTOR).last();
     },
     () => {
-      slate = cy.get(SLATE_SELECTOR, { timeout: 10000 }).last();
+      if (createNewSlate) {
+        cy.get('.block.inner').last().type('{moveToEnd}{enter}');
+        slate = cy.get(SLATE_SELECTOR, { timeout: 10000 }).last();
+      }
     }
   );
   return slate;
