@@ -20,6 +20,7 @@
   "devDependencies": {
     "@plone/scripts": "*",
     "@cypress/code-coverage": "^3.10.0",
+    "cypress-fail-fast": "^5.0.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "md5": "^2.3.0"
   },
