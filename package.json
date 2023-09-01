@@ -22,9 +22,33 @@
     "@cypress/code-coverage": "^3.10.0",
     "cypress-fail-fast": "^5.0.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "husky": "*",
+    "lint-staged": "*",
     "md5": "^2.3.0"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "make lint-fix",
+      "make prettier-fix"
+    ],
+    "src/**/*.{jsx}": [
+      "make i18n"
+    ],
+    "theme/**/*.{css,less}": [
+      "make stylelint-fix"
+    ],
+    "src/**/*.{css,less}": [
+      "make stylelint-fix"
+    ],
+    "theme/**/*.overrides": [
+      "make stylelint-fix"
+    ],
+    "src/**/*.overrides": [
+      "make stylelint-fix"
+    ]
+  },
   "scripts": {
+    "prepare": "husky install",
     "release": "release-it",
     "release-major-beta": "release-it major --preRelease=beta",
     "release-beta": "release-it --preRelease=beta",
