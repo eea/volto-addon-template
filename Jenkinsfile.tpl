@@ -5,12 +5,12 @@ pipeline {
 
   environment {
     GIT_NAME = "<%= name %>"
-    NAMESPACE = '@eeacms'
-    SONARQUBE_TAGS = 'volto.eea.europa.eu'
-    DEPENDENCIES = ''
-    BACKEND_PROFILES = 'eea.kitkat:testing'
-    BACKEND_ADDONS = ''
-    VOLTO = '16'
+    NAMESPACE = "@eeacms"
+    SONARQUBE_TAGS = "volto.eea.europa.eu"
+    DEPENDENCIES = ""
+    BACKEND_PROFILES = "eea.kitkat:testing"
+    BACKEND_ADDONS = ""
+    VOLTO = "16"
     IMAGE_NAME = BUILD_TAG.toLowerCase()
   }
 

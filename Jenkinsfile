@@ -4,13 +4,13 @@ pipeline {
   }
 
   environment {
-    GIT_NAME = 'volto-addon-template'
-    NAMESPACE = '@eeacms'
-    SONARQUBE_TAGS = 'volto.eea.europa.eu'
-    DEPENDENCIES = ''
-    BACKEND_PROFILES = 'eea.kitkat:testing'
-    BACKEND_ADDONS = ''
-    VOLTO = '16'
+    GIT_NAME = "volto-addon-template"
+    NAMESPACE = "@eeacms"
+    SONARQUBE_TAGS = "volto.eea.europa.eu"
+    DEPENDENCIES = ""
+    BACKEND_PROFILES = "eea.kitkat:testing"
+    BACKEND_ADDONS = ""
+    VOLTO = "16"
     IMAGE_NAME = BUILD_TAG.toLowerCase()
   }
 
