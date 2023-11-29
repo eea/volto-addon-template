@@ -42,34 +42,6 @@ jest.doMock('@plone/volto/components', () => {
   };
 });
 
-jest.doMock('@plone/volto-slate/editor/render', () => ({
-  __esModule: true,
-  serializeNodes: (nodes) => {
-    return nodes.map((node, index) => {
-      const Tag = node.type || 'p';
-      return (
-        <Tag key={`node-${index}`}>
-          {node.children.map((item, index) => (
-            <span key={`item-${index}`}>{item.text}</span>
-          ))}
-        </Tag>
-      );
-    });
-  },
-  serializeNodesToText: (nodes) => {
-    return nodes
-      .reduce((texts, node) => {
-        if (node.children) {
-          node.children.forEach((item) => {
-            texts.push(item.text);
-          });
-        }
-        return texts;
-      }, [])
-      .join('');
-  },
-}));
-
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve({}),
