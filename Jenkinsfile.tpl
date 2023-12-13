@@ -162,7 +162,7 @@ pipeline {
                 script {
                   try {
                     sh '''docker run --pull always --rm -d --name="$IMAGE_NAME-plone" -e SITE="Plone" -e PROFILES="$BACKEND_PROFILES" -e ADDONS="$BACKEND_ADDONS" eeacms/plone-backend'''
-                    sh '''docker run -d --shm-size=3g --link $IMAGE_NAME-plone:plone --name="$IMAGE_NAME-cypress" -e "RAZZLE_INTERNAL_API_PATH=http://plone:8080/Plone" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend start-ci'''
+                    sh '''docker run -d --shm-size=4g --link $IMAGE_NAME-plone:plone --name="$IMAGE_NAME-cypress" -e "RAZZLE_INTERNAL_API_PATH=http://plone:8080/Plone" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend start-ci'''
                     sh '''timeout -s 9 1800 docker exec --workdir=/app/src/addons/${GIT_NAME} $IMAGE_NAME-cypress make cypress-ci'''
                   } finally {
                     try {
