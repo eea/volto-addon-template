@@ -38,5 +38,5 @@ module.exports = {
       statements: 5,
     },
   },
-  setupFilesAfterEnv: ['<rootDir>/node_modules/<%= addonName %>/jest.setup.js'],
+  // setupFilesAfterEnv: ['<rootDir>/node_modules/<%= addonName %>/jest.setup.js'],
 };
