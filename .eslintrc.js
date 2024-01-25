@@ -1,15 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const projectRootPath = fs.realpathSync(__dirname + '/../../../');
-const packageJson = require(path.join(projectRootPath, 'package.json'));
 
 let voltoPath = path.join(projectRootPath, 'node_modules/@plone/volto');
-
 let configFile;
-if (fs.existsSync(`${this.projectRootPath}/tsconfig.json`))
-  configFile = `${this.projectRootPath}/tsconfig.json`;
-else if (fs.existsSync(`${this.projectRootPath}/jsconfig.json`))
-  configFile = `${this.projectRootPath}/jsconfig.json`;
+if (fs.existsSync(`${projectRootPath}/tsconfig.json`))
+  configFile = `${projectRootPath}/tsconfig.json`;
+else if (fs.existsSync(`${projectRootPath}/jsconfig.json`))
+  configFile = `${projectRootPath}/jsconfig.json`;
 
 if (configFile) {
   const jsConfig = require(configFile).compilerOptions;
