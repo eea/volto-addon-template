@@ -1,40 +1,45 @@
 const fs = require('fs');
 const path = require('path');
-
-const projectRootPath = fs.existsSync('./project')
-  ? fs.realpathSync('./project')
-  : fs.realpathSync('./../../../');
+const projectRootPath = fs.realpathSync(__dirname + '/../../../');
 const packageJson = require(path.join(projectRootPath, 'package.json'));
-const jsConfig = require(path.join(projectRootPath, 'jsconfig.json')).compilerOptions;
-
-const pathsConfig = jsConfig.paths;
 
 let voltoPath = path.join(projectRootPath, 'node_modules/@plone/volto');
 
-Object.keys(pathsConfig).forEach(pkg => {
-  if (pkg === '@plone/volto') {
-    voltoPath = `./${jsConfig.baseUrl}/${pathsConfig[pkg][0]}`;
-  }
-});
+let configFile;
+if (fs.existsSync(`${this.projectRootPath}/tsconfig.json`))
+  configFile = `${this.projectRootPath}/tsconfig.json`;
+else if (fs.existsSync(`${this.projectRootPath}/jsconfig.json`))
+  configFile = `${this.projectRootPath}/jsconfig.json`;
+
+if (configFile) {
+  const jsConfig = require(configFile).compilerOptions;
+  const pathsConfig = jsConfig.paths;
+  if (pathsConfig['@plone/volto'])
+    voltoPath = `./${jsConfig.baseUrl}/${pathsConfig['@plone/volto'][0]}`;
+}
+
 const AddonConfigurationRegistry = require(`${voltoPath}/addon-registry.js`);
 const reg = new AddonConfigurationRegistry(projectRootPath);
 
 // Extends ESlint configuration for adding the aliases to `src` directories in Volto addons
-const addonAliases = Object.keys(reg.packages).map(o => [
+const addonAliases = Object.keys(reg.packages).map((o) => [
   o,
   reg.packages[o].modulePath,
 ]);
 
+const addonExtenders = reg.getEslintExtenders().map((m) => require(m));
 
-module.exports = {
-  extends: `${projectRootPath}/node_modules/@plone/volto/.eslintrc`,
+const defaultConfig = {
+  extends: `${voltoPath}/.eslintrc`,
   settings: {
     'import/resolver': {
       alias: {
         map: [
           ['@plone/volto', '@plone/volto/src'],
+          ['@plone/volto-slate', '@plone/volto/packages/volto-slate/src'],
           ...addonAliases,
           ['@package', `${__dirname}/src`],
+          ['@root', `${__dirname}/src`],
           ['~', `${__dirname}/src`],
         ],
         extensions: ['.js', '.jsx', '.json'],
@@ -53,3 +58,10 @@ module.exports = {
     ],
   }
 };
+
+const config = addonExtenders.reduce(
+  (acc, extender) => extender.modify(acc),
+  defaultConfig,
+);
+
+module.exports = config;
