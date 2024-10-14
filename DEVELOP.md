@@ -26,7 +26,9 @@
 
 ### Or add @eeacms/volto-addon-template to your Volto project
 
-Before starting make sure your development environment is properly set. See [Volto Developer Documentation](https://docs.voltocms.com/getting-started/install/)
+Before starting make sure your development environment is properly set.
+
+See [Install](https://6.docs.plone.org/install/).
 
 1.  Make sure you have installed `yo`, `@plone/generator-volto` and `mrs-developer`
 
@@ -104,3 +106,8 @@ Or run it:
   ```Bash
   make cypress-run
   ```
+
+
+## Internationalization (i18n) and localization (l10n)
+
+See [Internationalization](https://6.docs.plone.org/volto/development/i18n.html) and [Translate Volto](https://6.docs.plone.org/i18n-l10n/contributing-translations.html#translate-volto).
