@@ -3,16 +3,16 @@
 [![Releases](https://img.shields.io/github/v/release/eea/<%= name %>)](https://github.com/eea/<%= name %>/releases)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2F<%= name %>%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/<%= name %>/job/master/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-master&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-master)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-master&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-master)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-master&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-master)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-master&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-master)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2F<%= name %>%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/<%= name %>/job/develop/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-develop)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-develop)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-develop)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>-develop)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>&branch=develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>&branch=develop)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>&branch=develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>&branch=develop)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>&branch=develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>&branch=develop)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=<%= name %>&branch=develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=<%= name %>&branch=develop)
 
 
 [Volto](https://github.com/plone/volto) add-on
