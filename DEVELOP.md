@@ -12,7 +12,9 @@
     make start
     ```
 
-1. Wait for `Volto started at 0.0.0.0:3000` meesage
+   `make start` defaults to Volto 18. Use `make VOLTO_VERSION=17 start` to test the Volto 17 dev environment.
+
+1. Wait for `Volto started at 0.0.0.0:3000` message
 
 1. Go to http://localhost:3000
 
@@ -26,23 +28,20 @@
 
 ### Or add @eeacms/volto-addon-template to your Volto project
 
-Before starting make sure your development environment is properly set.
+Before starting make sure your development environment is properly set. See the official Plone documentation for [creating a project with Cookieplone](https://6.docs.plone.org/install/create-project-cookieplone.html) and [installing an add-on in development mode in Volto 18 and 19](https://6.docs.plone.org/volto/development/add-ons/install-an-add-on-dev-18.html).
 
-See [Install](https://6.docs.plone.org/install/).
+For new Volto 18+ projects, use Cookieplone. It includes `mrs-developer` by default.
 
-1.  Make sure you have installed `yo`, `@plone/generator-volto` and `mrs-developer`
+1.  Create a new Volto project with Cookieplone
 
-        npm install -g yo @plone/generator-volto mrs-developer
-
-1.  Create new volto app
-
-        yo @plone/volto my-volto-project --addon @eeacms/volto-addon-template --skip-install
-        cd my-volto-project
+        uvx cookieplone project
+        cd project-title
 
 1.  Add the following to `mrs.developer.json`:
 
         {
             "volto-addon-template": {
+                "output": "packages",
                 "url": "https://github.com/eea/volto-addon-template.git",
                 "package": "@eeacms/volto-addon-template",
                 "branch": "develop",
@@ -50,28 +49,31 @@ See [Install](https://6.docs.plone.org/install/).
             }
         }
 
-1.  Install
+1.  Add `@eeacms/volto-addon-template` to the `addons` key in your project `volto.config.js`
 
-        make develop
-        yarn
+1.  Install or refresh the project setup
 
-1.  Start backend
+        make install
 
-        docker run --pull always -it --rm --name plone -p 8080:8080 -e SITE=Plone plone/plone-backend
+1.  Start backend in one terminal
 
-    ...wait for backend to setup and start - `Ready to handle requests`:
+        make backend-start
+
+    ...wait for backend to setup and start, ending with `Ready to handle requests`
 
     ...you can also check http://localhost:8080/Plone
 
-1.  Start frontend
+1.  Start frontend in a second terminal
 
-        yarn start
+        make frontend-start
 
 1.  Go to http://localhost:3000
 
 1.  Happy hacking!
 
-        cd src/addons/volto-addon-template/
+        cd packages/volto-addon-template
+
+For legacy Volto 17 projects, keep using the yarn-based workflow from the Volto 17 documentation.
 
 ## Cypress
 
@@ -83,7 +85,7 @@ project where you added `volto-addon-template` to `mrs.developer.json`
 Go to:
 
   ```BASH
-  cd src/addons/volto-addon-template/
+  cd packages/volto-addon-template/
   ```
 
 Start:
@@ -94,6 +96,8 @@ Start:
   ```
 
 This will build and start with Docker a clean `Plone backend` and `Volto Frontend` with `volto-addon-template` block installed.
+
+Use `make VOLTO_VERSION=17 start` if you need to reproduce the Volto 17 setup locally.
 
 Open Cypress Interface:
 
