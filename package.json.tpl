@@ -21,6 +21,7 @@
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "cypress": "13.1.0",
+    "cypress-fail-fast": "^7.1.1",
     "dotenv": "^16.3.2",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
