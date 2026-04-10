@@ -16,16 +16,15 @@
     "type": "git",
     "url": "git@github.com:eea/<%= name %>.git"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@plone/scripts": "*",
     "@cypress/code-coverage": "^3.10.0",
-    "cypress-fail-fast": "^5.0.1",
+    "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "cypress": "13.1.0",
+    "dotenv": "^16.3.2",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
-    "md5": "^2.3.0",
-    "cypress": "13.1.0"
+    "md5": "^2.3.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
@@ -49,7 +48,6 @@
     ]
   },
   "scripts": {
-    "prepare": "husky install",
     "release": "release-it",
     "release-major-beta": "release-it major --preRelease=beta",
     "release-beta": "release-it --preRelease=beta",
@@ -66,6 +64,7 @@
     "lint:fix": "make lint-fix",
     "i18n": "make i18n",
     "cypress:run": "make cypress-run",
-    "cypress:open": "make cypress-open"
+    "cypress:open": "make cypress-open",
+    "prepare": "husky install"
   }
 }
